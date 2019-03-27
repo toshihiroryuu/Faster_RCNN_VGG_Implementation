@@ -11,19 +11,19 @@ from keras import backend as K
 from keras.optimizers import Adam, SGD, RMSprop
 from keras.layers import Input
 from keras.models import Model
-from keras_frcnn import config, data_generators
-from keras_frcnn import losses as losses
-import keras_frcnn.roi_helpers as roi_helpers
+import config, data_generators
+import losses as losses
+import roi_helpers as roi_helpers
 from keras.utils import generic_utils
 
-from keras_frcnn.simple_parser import get_data
-from keras_frcnn import vgg
+from simple_parser import get_data
+import vgg
 
 sys.setrecursionlimit(40000)
 
 
 
-train_path='/home/quest/udacity_driving_datasets/trainsample.txt'
+train_path='/home/udacity_driving_datasets/trainsample.txt'
 print("Train path : {}".format(train_path))
 
 n_rois=32              #region of interest
