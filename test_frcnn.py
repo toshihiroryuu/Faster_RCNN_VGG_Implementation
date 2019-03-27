@@ -6,11 +6,11 @@ import sys
 import pickle
 from optparse import OptionParser
 import time
-from keras_frcnn import config
+import config
 from keras import backend as K
 from keras.layers import Input
 from keras.models import Model
-from keras_frcnn import roi_helpers
+import roi_helpers
 
 sys.setrecursionlimit(40000)
 
@@ -253,9 +253,9 @@ for idx, img_name in enumerate(sorted(os.listdir(img_path))):
 			cv2.putText(img, textLabel, textOrg, cv2.FONT_HERSHEY_DUPLEX, 1, (0, 0, 0), 1)
 			
 
-	# print('Elapsed time = {}'.format(time.time() - st))
-	# print(all_dets)
-	# cv2.imshow('img', img)
-	# cv2.waitKey(1)
-	# cv2.imwrite('./results_imgs/{}.png'.format(idx),img)
-	# print("image saved")
+	print('Elapsed time = {}'.format(time.time() - st))
+	print(all_dets)
+	cv2.imshow('img', img)
+	cv2.waitKey(1)
+	cv2.imwrite('./results_imgs/{}.png'.format(idx),img)
+	print("image saved")
